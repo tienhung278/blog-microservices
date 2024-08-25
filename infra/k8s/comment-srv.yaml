@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: post-service
+  name: comment-service
 spec:
   type: ClusterIP
   selector:
-    app: post
+    app: comment
   ports:
-    - name: post
+    - name: comment
       protocol: TCP
-      port: 4000
-      targetPort: 4000
+      port: 4001
+      targetPort: 4001
