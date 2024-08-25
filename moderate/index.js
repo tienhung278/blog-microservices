@@ -13,7 +13,7 @@ app.post('/events', async (req, res) => {
         case 'EventCommentCreated':
             const hasFilterWord = filterWords.some(filterWord => data.content.includes(filterWord));
             data.status = hasFilterWord ? 'rejected' : 'approved';
-            await axios.post('http://localhost:4001/events', {type: 'EventCommentVerified', data});
+            await axios.post('http://comment-service:4001/events', {type: 'EventCommentVerified', data});
             break;
     }
 

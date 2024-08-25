@@ -18,7 +18,7 @@ app.post('/posts', async (req, res) => {
     const pId = randomBytes(4).toString('hex');
     const {title} = req.body;
     posts.set(pId, title);
-    await axios.post('http://localhost:4005/events', {type: 'EventPostCreated', data: {pId, title}});
+    await axios.post('http://event-bus-service:4005/events', {type: 'EventPostCreated', data: {pId, title}});
     res.status(201).send({id: pId, title})
 });
 

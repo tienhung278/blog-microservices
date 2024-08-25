@@ -8,7 +8,7 @@ const PostItem = ({post}) => {
     const context = useContext(CommentContext);
 
     const onContentSubmit = async formData => {
-        let res = await axios.post(`http://localhost:4001/posts/${post.id}/comments`, formData);
+        let res = await axios.post(`http://comment-service:4001/posts/${post.id}/comments`, formData);
         context.setNewContent(res.data);
     }
 

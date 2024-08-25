@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: event-bus
-          image: blog/event-bus:0.0.1
+          image: blog/event-bus:0.0.2

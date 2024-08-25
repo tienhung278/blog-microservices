@@ -15,12 +15,12 @@ function App() {
     }, [newPost, newContent]);
 
     const getPosts = async () => {
-        const res = await axios.get('http://localhost:4002/posts');
+        const res = await axios.get('http://query-service:4002/posts');
         setPosts(res.data);
     }
 
     const onPostSubmit = async formData => {
-        const res = await axios.post('http://localhost:4000/posts', formData);
+        const res = await axios.post('http://post-service:4000/posts', formData);
         const data = res.data;
         setNewPost(data);
     }

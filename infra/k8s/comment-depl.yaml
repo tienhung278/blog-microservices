@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: comment
-          image: blog/comment:0.0.1
+          image: blog/comment:0.0.2

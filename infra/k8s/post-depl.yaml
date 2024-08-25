@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: post
-          image: blog/post:0.0.1
+          image: blog/post:0.0.2

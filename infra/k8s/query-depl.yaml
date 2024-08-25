@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: query
-          image: blog/query:0.0.1
+          image: blog/query:0.0.2

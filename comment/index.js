@@ -22,7 +22,7 @@ app.post('/posts/:pId/comments', async (req, res) => {
     const values = comments.get(pId) || [];
     values.push({id: cId, content, status: 'pending'});
     comments.set(pId, values);
-    await axios.post('http://localhost:4005/events',
+    await axios.post('http://event-bus-service:4005/events',
         {type: 'EventCommentCreated', data: {pId, cId, content, status: 'pending'}});
     res.status(201).json({id: cId, content, status: 'pending'});
 });
@@ -34,7 +34,7 @@ app.post('/events', async (req, res) => {
             const values = comments.get(data.pId);
             const value = values.find(c => c.id === data.cId);
             value.status = data.status;
-            await axios.post('http://localhost:4005/events',
+            await axios.post('http://event-bus-service:4005/events',
                 {type: 'EventCommentUpdated', data: {pId: data.pId, cId: value.id, content: value.content, status: value.status}})
             break;
     }
